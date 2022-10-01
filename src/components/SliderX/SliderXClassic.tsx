@@ -1,15 +1,9 @@
 import "./SliderX.css";
-import {
-  useState,
-  useId,
-  useEffect,
-  useRef,
-  ChangeEvent,
-  useMemo,
-} from "react";
+import { useState, useEffect, useRef, ChangeEvent, useMemo } from "react";
 import { Color, EnumSliderXOptions, SliderXOptions } from "./types/types";
 import React from "react";
 import { findClosestNum } from "./functions/findClosestNum";
+import { randomID } from "./functions/randomID";
 import { isFlagSet } from "./functions/isFlagSet";
 
 interface SliderXClassicProps {
@@ -49,13 +43,11 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
   value,
   defaultValue = min,
 }) => {
-  const id_auto = "sliderX_" + useId().slice(1, -1);
-  const id_ = id ? id : id_auto;
-
   //https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs
   //@ts-ignore
   const isFirefox = typeof InstallTrigger !== "undefined";
 
+  const [id_, setId] = useState<string>(id ? id : "sliderX_" + randomID(12));
   const [valueState, setValueState] = useState<number>(0);
   const [classes] = useState<string>(`sliderX ${className ? className : ""}`);
 
