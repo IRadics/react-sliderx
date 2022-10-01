@@ -1,0 +1,52 @@
+{
+  "name": "@iradics/react-sliderx",
+  "version": "0.9.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Iradics/packages.git"
+  },
+  "watch": {
+    "rollup": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx,ts,tsx,css"
+    }
+  },
+  "scripts": {
+    "rollup": "rollup -c",
+    "watch": "npm-watch"
+  },
+  "author": "IRadics",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-typescript": "^8.5.0",
+    "@types/estree": "^1.0.0",
+    "@types/react": "^18.0.20",
+    "npm-watch": "^0.11.0",
+    "react": "file:../react-sliderx-dev/node_modules/react",
+    "rollup": "^2.79.0",
+    "rollup-plugin-dts": "^4.2.2",
+    "rollup-plugin-node-externals": "^5.0.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3",
+    "usehooks-ts": "^2.7.1"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/iradics"
+  }
+}
