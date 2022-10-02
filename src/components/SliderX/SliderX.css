@@ -75,7 +75,7 @@
 .sliderX-labels td {
   border: none;
   background: transparent;
-  padding: none;
+  padding: 0;
 }
 
 .sliderX-label {
