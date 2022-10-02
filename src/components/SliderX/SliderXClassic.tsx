@@ -52,7 +52,6 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
   const [classes] = useState<string>(`sliderX ${className ? className : ""}`);
 
   const sliderXRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (value) setValueState(value);
@@ -134,7 +133,6 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
         step={step}
         value={value !== undefined ? value : valueState}
         onChange={handleChange}
-        ref={inputRef}
       ></input>
     </div>
   );
