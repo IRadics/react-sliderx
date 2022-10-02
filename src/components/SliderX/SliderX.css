@@ -60,6 +60,16 @@
   word-break: break-all;
   table-layout: fixed;
   padding-top: 1em;
+  display: table;
+  border: none;
+  background: transparent;
+}
+
+.sliderX-labels thead,
+.sliderX-labels tr,
+.sliderX-labels td {
+  border: none;
+  background: transparent;
 }
 
 .sliderX-label {
