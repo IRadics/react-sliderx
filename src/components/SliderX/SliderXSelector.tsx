@@ -65,6 +65,11 @@ const SliderXSelector: React.FC<SliderXProps> = ({
     [optionCount, animationTime]
   );
 
+  const classes = useMemo(
+    () => `sliderXSelector ${className ? className : ""}`,
+    [className]
+  );
+
   useEffect(() => {
     if (max && optionCount) {
       let values: number[] = [];
@@ -170,7 +175,7 @@ const SliderXSelector: React.FC<SliderXProps> = ({
   };
 
   return (
-    <div className={className}>
+    <div className={classes}>
       <SliderXClassic
         id={id}
         min={0}
@@ -180,8 +185,7 @@ const SliderXSelector: React.FC<SliderXProps> = ({
         colors={colors}
         options={options}
       ></SliderXClassic>
-
-      {labels ? <div>{labelsTable()}</div> : ""}
+      {labelsTable()}
     </div>
   );
 };

@@ -1,4 +1,5 @@
-.sliderX {
+.sliderX,
+.sliderXSelector {
   /*Dynamic color variable, changed by js - do not change directly*/
   --sliderX-var-dynamic-color: unset;
 
