@@ -24,7 +24,7 @@ interface SliderXClassicProps {
  * @param max
  * @param step
  * @param className             additional classname
- * @param onChange              returns the input change event
+ * @param onChange              returns the HTMLInputElement change event
  * @param colors                array of RGB,RGBA or HEX colors
  * @param defaultValue          initial value
  * @param id                    custom ID
