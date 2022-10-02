@@ -58,7 +58,7 @@
 }
 
 .sliderX-labels {
-  width: 100%;
+  width: calc(100% - var(--sliderX-thumb-width) / 2);
   border-spacing: 0;
   margin: 0 auto;
   word-break: break-all;
