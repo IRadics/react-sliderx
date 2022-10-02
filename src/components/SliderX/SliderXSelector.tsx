@@ -113,8 +113,8 @@ const SliderXSelector: React.FC<SliderXProps> = ({
       isAnimatingThumb ? 15 : null
     );
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let selected = findClosestNum(parseInt(e.target.value), validValues);
+  const handleChange = (value: string) => {
+    let selected = findClosestNum(parseInt(value), validValues);
 
     if (selectedIndex != selected) {
       setSelectedIndex(selected);
@@ -128,6 +128,21 @@ const SliderXSelector: React.FC<SliderXProps> = ({
     }
   };
 
+  const label = (text: string, index: number) => {
+    if (isFlagSet(options, EnumSliderXOptions.ClickableLabels)) {
+      return (
+        <span
+          className="sliderx-label-clickable"
+          onClick={() => handleChange(validValues[index].toString())}
+        >
+          {text}
+        </span>
+      );
+    } else {
+      return <span>{text}</span>;
+    }
+  };
+
   const labelsTable = () => {
     if (labels && labels.length > 0) {
       return (
@@ -137,7 +152,7 @@ const SliderXSelector: React.FC<SliderXProps> = ({
               {labels.map((text, index) => {
                 return (
                   <td key={index}>
-                    <span className="sliderX-label">{text}</span>
+                    <span className="sliderX-label">{label(text, index)}</span>
                   </td>
                 );
               })}
@@ -161,7 +176,7 @@ const SliderXSelector: React.FC<SliderXProps> = ({
         min={0}
         max={max}
         value={index !== undefined ? indexToValue(index) : value}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e.target.value)}
         colors={colors}
         options={options}
       ></SliderXClassic>

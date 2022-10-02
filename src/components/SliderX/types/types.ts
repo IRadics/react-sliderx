@@ -10,6 +10,7 @@ export type Color = RGB | RGBA | HEX;
 export enum EnumSliderXOptions {
   DynamicColorSampleRight = 1 << 0,
   DisableCenteredOptions = 1 << 1,
+  ClickableLabels = 1 << 2,
 }
 
 export type SliderXOptions = EnumSliderXOptions;

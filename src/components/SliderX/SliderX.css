@@ -87,6 +87,10 @@
   text-align: center;
 }
 
+.sliderx-label-clickable:hover {
+  cursor: pointer;
+}
+
 .sliderX-input {
   width: calc(100% - var(--sliderX-thumb-width) / 2);
   height: var(--sliderX-track-height);
