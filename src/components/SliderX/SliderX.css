@@ -53,6 +53,10 @@
   --sliderX-thumb-disabled-box-shadow: unset;
 }
 
+.sliderX {
+  text-align: center;
+}
+
 .sliderX-labels {
   width: 100%;
   border-spacing: 0;
@@ -83,7 +87,7 @@
 }
 
 .sliderX-input {
-  width: 100%;
+  width: calc(100% - var(--sliderX-thumb-width) / 2);
   height: var(--sliderX-track-height);
   border-radius: var(--sliderX-track-border-radius);
   border: var(--sliderX-track-border);
