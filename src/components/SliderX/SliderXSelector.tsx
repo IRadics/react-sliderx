@@ -27,7 +27,7 @@ interface SliderXProps {
  * @param optionCount           number of options
  * @param defaultOptionIndex    initially selected option. Invalid index is defaulted to the min or max index.
  * @param labels                array of strings for labels, pass "" to empty label. \n works for linebreaks
- * @param id                    custom ID
+ * @param id                    custom ID of the slider <input> element
  * @param options               slider behaviour options (use EnumSliderOptions)
  * @param index                 Controls the selection. Invalid indexes are defaulted to the min or max index.
  * @param animationTime         time of full animation for selection change in microseconds. If 0 or undefined, the slider changes instantly.

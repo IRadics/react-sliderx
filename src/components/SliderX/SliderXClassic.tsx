@@ -27,7 +27,7 @@ interface SliderXClassicProps {
  * @param onChange              returns the HTMLInputElement change event
  * @param colors                array of RGB,RGBA or HEX colors
  * @param defaultValue          initial value
- * @param id                    custom ID
+ * @param id                    custom ID of the slider <input> element
  * @param options               slider behaviour options (use EnumSliderOptions)
  * @param value                 Controls the value.
  */
