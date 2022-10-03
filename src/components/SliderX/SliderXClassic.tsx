@@ -47,9 +47,8 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
   //@ts-ignore
   const isFirefox = typeof InstallTrigger !== "undefined";
 
-  const [id_, setId] = useState<string>(id ? id : "sliderX_" + randomID(12));
+  const [id_] = useState<string>(id ? id : "sliderX_" + randomID(12));
   const [valueState, setValueState] = useState<number>(0);
-  const [classes] = useState<string>(`sliderX ${className ? className : ""}`);
 
   const sliderXRef = useRef<HTMLDivElement>(null);
 
@@ -120,7 +119,7 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
   };
 
   return (
-    <div className={classes} ref={sliderXRef}>
+    <div className={`sliderX ${className ? className : ""}`} ref={sliderXRef}>
       <style
         dangerouslySetInnerHTML={useMemo(() => setStyling(), [colors])}
       ></style>
