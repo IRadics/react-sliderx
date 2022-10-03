@@ -1,5 +1,4 @@
-.sliderX,
-.sliderXSelector {
+:root {
   /*Dynamic color variable, changed by js - do not change directly*/
   --sliderX-var-dynamic-color: unset;
 
@@ -56,6 +55,7 @@
 
 .sliderX {
   text-align: center;
+  --sliderX-thumb-border: 2px solid var(--sliderX-var-dynamic-color, #000000);
 }
 
 .sliderX-labels {
