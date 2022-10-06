@@ -44,8 +44,11 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
   defaultValue = min,
 }) => {
   //https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs
-  //@ts-ignore
-  const isFirefox = () => typeof InstallTrigger !== "undefined";
+  //https://stackoverflow.com/a/7000222/19653844
+  const isFirefox = () =>
+    //@ts-ignore
+    typeof InstallTrigger !== "undefined" ||
+    navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
 
   const [id_] = useState<string>(id ? id : "sliderX_" + randomID(12));
   const [valueState, setValueState] = useState<number>(0);
