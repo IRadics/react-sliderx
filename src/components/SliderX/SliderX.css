@@ -92,9 +92,6 @@
 }
 
 .sliderX-input {
-  /*
-  width: calc(100% - var(--sliderX-thumb-width) / 2);
-  */
   width: 100%;
   height: var(--sliderX-track-height);
   border-radius: var(--sliderX-track-border-radius);
@@ -147,6 +144,7 @@
   box-sizing: border-box; /* Opera/IE 8+ */
   background: none;
   filter: var(--sliderX-filter);
+  background-color: unset;
 
   box-shadow: unset;
 }
