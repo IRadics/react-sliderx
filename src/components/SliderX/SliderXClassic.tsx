@@ -119,20 +119,30 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
   };
 
   return (
-    <div className={`sliderX ${className ? className : ""}`} ref={sliderXRef}>
-      <style
-        dangerouslySetInnerHTML={useMemo(() => setStyling(), [colors])}
-      ></style>
-      <input
-        type="range"
-        className={`sliderX-input${isFirefox ? " sliderX-input-moz" : ""}`}
-        id={id_}
-        min={min}
-        max={max}
-        step={step}
-        value={value !== undefined ? value : valueState}
-        onChange={handleChange}
-      ></input>
+    <div className="sliderX-root" ref={sliderXRef}>
+      <div className={`sliderX ${className ? className : ""}`}>
+        <div
+          className={`sliderX-container ${
+            className ? className + "-container" : ""
+          }`}
+        >
+          <style
+            dangerouslySetInnerHTML={useMemo(() => setStyling(), [colors])}
+          ></style>
+          <input
+            type="range"
+            className={`sliderX-input ${isFirefox ? "sliderX-input-moz " : ""}${
+              className ? className + "-input" : ""
+            }`}
+            id={id_}
+            min={min}
+            max={max}
+            step={step}
+            value={value !== undefined ? value : valueState}
+            onChange={handleChange}
+          ></input>
+        </div>
+      </div>
     </div>
   );
 };

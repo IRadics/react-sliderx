@@ -1,21 +1,24 @@
 {
   "name": "@iradics/react-sliderx",
-  "version": "0.9.5",
+  "version": "1.0.1",
   "description": "Slider component for React including a highly customizable selector functionality and much more",
   "keywords": [
     "slider",
     "react",
+    "react-component",
     "selector",
-    "color"
+    "color",
+    "input",
+    "range"
   ],
-  "homepage": "https://github.com/IRadics/react-sliderx",
+  "homepage": "sliderx.iradics.net",
   "funding": {
     "type": "buyMeACoffee",
     "url": "https://www.buymeacoffee.com/iradics"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Iradics/packages.git"
+    "url": "https://github.com/IRadics/react-sliderx"
   },
   "watch": {
     "rollup": {
@@ -58,6 +61,6 @@
   ],
   "types": "dist/index.d.ts",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/iradics"
+    "registry": "https://registry.npmjs.org"
   }
 }

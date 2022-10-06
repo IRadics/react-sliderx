@@ -1,4 +1,4 @@
-:root {
+.sliderX-root {
   /*Dynamic color variable, changed by js - do not change directly*/
   --sliderX-var-dynamic-color: unset;
 
@@ -53,13 +53,12 @@
   --sliderX-thumb-disabled-box-shadow: unset;
 }
 
-.sliderX {
+.sliderX-container {
   text-align: center;
-  --sliderX-thumb-border: 2px solid var(--sliderX-var-dynamic-color, #000000);
 }
 
 .sliderX-labels {
-  width: calc(100% - var(--sliderX-thumb-width) / 2);
+  width: 100%;
   border-spacing: 0;
   margin: 0 auto;
   overflow-wrap: break-word;
@@ -93,7 +92,10 @@
 }
 
 .sliderX-input {
+  /*
   width: calc(100% - var(--sliderX-thumb-width) / 2);
+  */
+  width: 100%;
   height: var(--sliderX-track-height);
   border-radius: var(--sliderX-track-border-radius);
   border: var(--sliderX-track-border);

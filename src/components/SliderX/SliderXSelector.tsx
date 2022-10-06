@@ -146,21 +146,35 @@ const SliderXSelector: React.FC<SliderXProps> = ({
   const labelsTable = () => {
     if (labels && labels.length > 0) {
       return (
-        <table
-          className={`sliderX-labels ${className ? className + "-labels" : ""}`}
+        <div
+          className={`sliderX-labels-container ${
+            className ? className + "-labels-container" : ""
+          }`}
         >
-          <thead>
-            <tr>
-              {labels.map((text, index) => {
-                return (
-                  <td key={index}>
-                    <span className="sliderX-label">{label(text, index)}</span>
-                  </td>
-                );
-              })}
-            </tr>
-          </thead>
-        </table>
+          <table
+            className={`sliderX-labels ${
+              className ? className + "-labels" : ""
+            }`}
+          >
+            <thead>
+              <tr>
+                {labels.map((text, index) => {
+                  return (
+                    <td key={index}>
+                      <span
+                        className={`sliderX-label ${
+                          className ? className + "-label" : ""
+                        }`}
+                      >
+                        {label(text, index)}
+                      </span>
+                    </td>
+                  );
+                })}
+              </tr>
+            </thead>
+          </table>
+        </div>
       );
     } else {
       return null;
@@ -172,22 +186,26 @@ const SliderXSelector: React.FC<SliderXProps> = ({
   };
 
   return (
-    <div
-      className={`sliderXselectorContainer ${
-        className ? className + "-selectorContainer" : ""
-      }`}
-    >
-      <SliderXClassic
-        id={id}
-        min={0}
-        max={max}
-        value={index !== undefined ? indexToValue(index) : value}
-        onChange={(e) => handleChange(e.target.value)}
-        colors={colors}
-        options={options}
-        className={className}
-      ></SliderXClassic>
-      {labelsTable()}
+    <div className="sliderX-root">
+      <div className={`sliderX ${className ? className : ""}`}>
+        <div
+          className={`sliderX-selector-container ${
+            className ? className + "-selector-container" : ""
+          }`}
+        >
+          <SliderXClassic
+            id={id}
+            min={0}
+            max={max}
+            value={index !== undefined ? indexToValue(index) : value}
+            onChange={(e) => handleChange(e.target.value)}
+            colors={colors}
+            options={options}
+            className={className}
+          ></SliderXClassic>
+          {labelsTable()}
+        </div>
+      </div>
     </div>
   );
 };
