@@ -45,7 +45,7 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
 }) => {
   //https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs
   //@ts-ignore
-  const isFirefox = typeof InstallTrigger !== "undefined";
+  const isFirefox = () => typeof InstallTrigger !== "undefined";
 
   const [id_] = useState<string>(id ? id : "sliderX_" + randomID(12));
   const [valueState, setValueState] = useState<number>(0);
@@ -104,7 +104,7 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
       });
 
       htmlString = `#${id_}${
-        isFirefox ? "::-moz-range-track" : ""
+        isFirefox() ? "::-moz-range-track" : ""
       }\n{${htmlString}}`;
     }
 
@@ -131,9 +131,9 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
           ></style>
           <input
             type="range"
-            className={`sliderX-input ${isFirefox ? "sliderX-input-moz " : ""}${
-              className ? className + "-input" : ""
-            }`}
+            className={`sliderX-input ${
+              isFirefox() ? "sliderX-input-moz " : ""
+            }${className ? className + "-input" : ""}`}
             id={id_}
             min={min}
             max={max}
