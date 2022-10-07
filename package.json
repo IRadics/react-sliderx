@@ -1,7 +1,7 @@
 {
   "name": "@iradics/react-sliderx",
-  "version": "1.0.6",
-  "description": "Slider component for React including a highly customizable selector functionality and much more",
+  "version": "1.0.7",
+  "description": "Easily customizable Slider component for React including a highly customizable selector functionality",
   "keywords": [
     "slider",
     "react",
