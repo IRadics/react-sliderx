@@ -1,4 +1,4 @@
-### For full documentation and examples visit [sliderx.iradics.net](https://sliderx.iradics.net/)
+### For full documentation, compatibility and examples visit [sliderx.iradics.net](https://sliderx.iradics.net/)
 
 ##  Getting started
 #### Add SliderX your project:
