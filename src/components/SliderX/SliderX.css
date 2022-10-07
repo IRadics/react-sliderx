@@ -1,6 +1,7 @@
 .sliderX-root {
   /*Dynamic color variable, changed by js - do not change directly*/
   --sliderX-var-dynamic-color: unset;
+  --sliderX-var-background-image: unset;
 
   /* --- SLIDER --- */
   --sliderX-filter: unset;
@@ -109,6 +110,8 @@
   box-shadow: var(--sliderX-track-box-shadow);
 
   background-color: var(--sliderX-track-background-color, unset);
+
+  background-image: var(--sliderX-var-background-image);
 }
 
 .sliderX-input:hover {
@@ -132,26 +135,30 @@
     var(--sliderX-track-box-shadow)
   );
 }
+@supports (-moz-appearance: none) {
+  .sliderX-input-moz {
+    border: none;
+    border-radius: 0;
 
-.sliderX-input-moz {
-  border: none;
-  border-radius: 0;
-  width: calc(100% + var(--sliderX-thumb-width));
-  margin-left: calc(var(--sliderX-thumb-width) / 2 * -1);
+    width: calc(100% + var(--sliderX-thumb-width));
 
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box; /* Firefox, other Gecko */
-  box-sizing: border-box; /* Opera/IE 8+ */
-  background: none;
-  filter: var(--sliderX-filter);
-  background-color: unset;
+    margin-left: calc(var(--sliderX-thumb-width) / 2 * -1);
 
-  box-shadow: unset;
-}
-.sliderX-input-moz:hover,
-.sliderX-input-moz:disabled,
-.sliderX-input-moz:active {
-  box-shadow: unset;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+    background: none;
+    filter: var(--sliderX-filter);
+    background-color: unset;
+
+    background-image: unset;
+    box-shadow: unset;
+  }
+  .sliderX-input-moz:hover,
+  .sliderX-input-moz:disabled,
+  .sliderX-input-moz:active {
+    box-shadow: unset;
+  }
 }
 
 .sliderX-input::-webkit-slider-thumb {
@@ -341,6 +348,8 @@
   box-shadow: var(--sliderX-track-box-shadow);
 
   background-color: var(--sliderX-track-background-color, unset);
+
+  background-image: var(--sliderX-var-background-image);
 }
 
 .sliderX-input-moz:hover::-moz-range-track {

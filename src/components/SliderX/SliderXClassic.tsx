@@ -46,11 +46,6 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
   //https://stackoverflow.com/questions/49328382/browser-detection-in-reactjs
   //https://stackoverflow.com/a/7000222/19653844
   //@ts-ignore
-  let isFirefox = typeof InstallTrigger !== "undefined";
-  if (!isFirefox && typeof window !== "undefined") {
-    isFirefox =
-      window.navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
-  }
 
   const [id_] = useState<string>(id ? id : "sliderX_" + randomID(12));
   const [valueState, setValueState] = useState<number>(0);
@@ -96,7 +91,7 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
     if (colors) {
       const colorPercentage = (1 / colors?.length) * 100;
       ["linear-gradient", "-webkit-linear-gradient"].forEach((fn) => {
-        htmlString = htmlString.concat(`background-image: `);
+        htmlString = htmlString.concat(`--sliderX-var-background-image: `);
         htmlString = htmlString.concat(`${fn}(left,`);
         colors.forEach((color, index, arr) => {
           htmlString = htmlString.concat(
@@ -108,9 +103,7 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
         htmlString = htmlString.concat(");\n");
       });
 
-      htmlString = `#${id_}${
-        isFirefox ? "::-moz-range-track" : ""
-      }\n{${htmlString}}`;
+      htmlString = `#${id_}\n{--sliderX-var-background-image: ${htmlString}}`;
     }
 
     return {
@@ -136,7 +129,7 @@ const SliderXClassic: React.FC<SliderXClassicProps> = ({
           ></style>
           <input
             type="range"
-            className={`sliderX-input ${isFirefox ? "sliderX-input-moz " : ""}${
+            className={`sliderX-input sliderX-input-moz "${
               className ? className + "-input" : ""
             }`}
             id={id_}
