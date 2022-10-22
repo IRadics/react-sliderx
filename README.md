@@ -37,7 +37,7 @@ A slider component with predefined positions to select from multiple options
 <SliderXSelectorExample></SliderXSelectorExample>
 
 <Tabs>
-  <TabItem value="jsx" label="JavaScript">
+  <TabItem value="jsx" label="JavaScript / Typescript">
 
 ```jsx
 <SliderXSelector
@@ -74,6 +74,8 @@ A slider component with predefined positions to select from multiple options
 ##  SliderXClassic
 Classic slider component with full range, implementing all the available easy styling possibilities.
 
+Note that in this example, TypeScript implementation needs additional elements.
+
 <SliderXClassicExample></SliderXClassicExample>
 
 <Tabs>
@@ -92,6 +94,32 @@ export const SliderXClassicExample = () => {
         className={"sliderXClassicExample"}
         onChange={(e) => {
           setcolor(`rgba(102,23,163,${e.target.value / 100})`);
+        }}
+      ></SliderXClassic>
+    </div>
+  );
+};
+```
+
+</TabItem>
+
+  <TabItem value="tsx" label="TypeScript">
+
+```tsx
+import { SliderXClassic, Color } from "@iradics/react-sliderx";
+
+export const SliderXClassicExample = () => {
+  const [color, setcolor] = useState<Color>("rgba(102,23,163,1)");
+  return (
+    <div style={{ width: "75%", margin: "auto" }}>
+      <SliderXClassic
+        defaultValue={100}
+        min={0}
+        max={100}
+        colors={[color]}
+        className={"sliderXClassicExample"}
+        onChange={(e) => {
+          setcolor(`rgba(102,23,163,${parseInt(e.target.value) / 100})`);
         }}
       ></SliderXClassic>
     </div>
@@ -145,7 +173,7 @@ Use <ColorText color="#25c2a0">**EnumSliderXOptions**</ColorText> to access thes
 
 <Tabs>
 
-  <TabItem value="jsx" label="JavaScript">
+  <TabItem value="jsx" label="JavaScript / Typescript">
 
 ```jsx
 <SliderXSelector
