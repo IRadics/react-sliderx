@@ -1,3 +1,5 @@
+[![npm (scoped)](https://img.shields.io/npm/v/@iradics/react-sliderx)](https://www.npmjs.com/package/@iradics/react-sliderx) [![npm (scoped)](https://img.shields.io/npm/dm/@iradics/react-sliderx)](https://www.npmjs.com/package/@iradics/react-sliderx) [![GitHub](https://img.shields.io/github/license/iradics/react-sliderx)](https://github.com/IRadics/react-sliderx/blob/master/license)
+
 ### For full documentation, compatibility and examples visit [sliderx.iradics.net](https://sliderx.iradics.net/)
 
 ##  Getting started
@@ -32,6 +34,8 @@ import { SliderXClassic, SliderXSelector } from "@iradics/react-sliderx";
 ##  SliderXSelector
 A slider component with predefined positions to select from multiple options
 
+<SliderXSelectorExample></SliderXSelectorExample>
+
 <Tabs>
   <TabItem value="jsx" label="JavaScript">
 
@@ -49,22 +53,20 @@ A slider component with predefined positions to select from multiple options
   </TabItem>
 </Tabs>
 
-<SliderXSelectorExample></SliderXSelectorExample>
-
 ### Props
 
-|                   Name |                   Type                   | Optional | Default | Description                                                                                          |
-| ---------------------: | :--------------------------------------: | :------: | ------- | ---------------------------------------------------------------------------------------------------- |
-|          **className** |                  string                  |   true   |         | Additional classname to add to the component                                                         |
-|           **onChange** |                 function                 |   true   |         | Returns the index of the selected option                                                             |
-|             **colors** |                  array                   |   true   |         | Array of RGB,RGBA or HEX colors                                                                      |
-|        **optionCount** |                  number                  |  false   |         | Number of options                                                                                    |
-| **defaultOptionIndex** |                  number                  |   true   | 0       | Initially selected option. Invalid index is defaulted to the min or max index                        |
-|             **labels** |                  array                   |   true   |         | Array of strings for labels. Pass "" for empty label. **\n** works for linebreaks                    |
-|                 **id** |                  string                  |   true   |         | Custom ID for the direct slider \(<input\>) element which overwrites the default generated random ID |
-|            **options** | EnumSliderXOptions |   true   |         | Slider behavior options. Use EnumSliderXOptions                                |
-|              **index** |                  number                  |   true   |         | Allows to externally control the selection. Invalid indexes are defaulted to min or max index.       |
-|      **animationTime** |                  number                  |   true   | 0       | Time of full animation for selection change in microseconds. Use 0 for instant change.               |
+|                   Name |                 Type                 | Optional | Default | Description                                                                                          |
+| ---------------------: | :----------------------------------: | :------: | ------- | ---------------------------------------------------------------------------------------------------- |
+|          **className** |                string                |   true   |         | Additional classname to add to the component                                                         |
+|           **onChange** |               function               |   true   |         | Returns the index of the selected option                                                             |
+|             **colors** |                array                 |   true   |         | Array of RGB,RGBA or HEX colors                                                                      |
+|        **optionCount** |                number                |  false   |         | Number of options                                                                                    |
+| **defaultOptionIndex** |                number                |   true   | 0       | Initially selected option. Invalid index is defaulted to the min or max index                        |
+|             **labels** |                array                 |   true   |         | Array of strings for labels. Pass "" for empty label. **\n** works for linebreaks                    |
+|                 **id** |                string                |   true   |         | Custom ID for the direct slider \(<input\>) element which overwrites the default generated random ID |
+|            **options** | EnumSliderXOptions |   true   |         | Slider behavior options. Use EnumSliderXOptions                                    |
+|              **index** |                number                |   true   |         | Allows to externally control the selection. Invalid indexes are defaulted to min or max index.       |
+|      **animationTime** |                number                |   true   | 0       | Time of full animation for selection change in microseconds. Use 0 for instant change.               |
 
 
 ---
